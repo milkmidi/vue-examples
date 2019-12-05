@@ -16,6 +16,3 @@ section
   p {{state.isLoading}}
   p {{state.userData}}
 </template>
-
-<style lang="stylus">
-</style>
