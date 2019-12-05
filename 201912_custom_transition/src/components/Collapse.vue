@@ -3,24 +3,14 @@
 import Vue from 'vue';
 
 const transitionHook = {
-  beforeEnter(el) {
-    el.classList.add('collapse-animate-enter');
-  },
   enter(el) {
     el.style['max-height'] = `${el.scrollHeight}px`;
   },
-  afterEnter(el) {
-    el.classList.remove('collapse-animate-enter');
-  },
   beforeLeave(el) {
-    el.classList.add('collapse-animate-leave');
     el.style['max-height'] = `${el.scrollHeight}px`;
   },
   leave(el) {
     Vue.nextTick(() => el.style['max-height'] = 0);
-  },
-  afterLeave(el) {
-    el.classList.remove('collapse-animate-leave');
   },
 };
 
@@ -30,6 +20,9 @@ const Collapse = {
   render(h, { children }) {
     const data = {
       on: transitionHook,
+      attrs: {
+        name: 'collapse',
+      },
     };
     return h('transition', data, children);
   },
@@ -37,8 +30,9 @@ const Collapse = {
 export default Collapse;
 
 </script>
-<style lang="scss">
-.collapse-animate-leave , .collapse-animate-enter {
+<style lang="scss" scoped>
+.collapse-enter-active,
+.collapse-leave-active {
   overflow: hidden;
   transition: max-height 1.35s;
 }

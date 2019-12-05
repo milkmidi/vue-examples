@@ -1,12 +1,16 @@
 <script>
-import Collapse from './Collapse.vue';
+
+
+interface Data {
+  show:boolean,
+}
 
 export default {
   name: 'App',
   components: {
-    Collapse,
+    Collapse: require('./Collapse.vue').default,
   },
-  data: () => ({
+  data: ():Data => ({
     show: true,
   }),
 };
@@ -18,10 +22,7 @@ export default {
     .row
       .col-12
         button(@click="show=!show") Show
-      .col-6
-        transition(name="fade")
-          h1(v-show="show") hi fade
-      .col-6
+      .col-12
         Collapse
           h1(v-show="show") hi Collapse
         h1 hi
@@ -34,12 +35,4 @@ h1{
   color: white;
   display: block;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to{
-  opacity: 0;
-}
-
-
 </style>
