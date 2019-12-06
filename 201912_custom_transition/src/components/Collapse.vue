@@ -1,16 +1,16 @@
 <script>
 /* eslint no-return-assign:0, no-param-reassign:0 */
 const transitionHook = {
-  beforeEnter(el) {
+  beforeEnter(el:HTMLElement) {
     el.style['max-height'] = '0';
   },
-  enter(el) {
+  enter(el:HTMLElement) {
     el.style['max-height'] = `${el.scrollHeight}px`;
   },
-  beforeLeave(el) {
+  beforeLeave(el:HTMLElement) {
     el.style['max-height'] = `${el.scrollHeight}px`;
   },
-  leave(el) {
+  leave(el:HTMLElement) {
     setTimeout(() => el.style['max-height'] = '0', 0);
   },
 };
