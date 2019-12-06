@@ -134,8 +134,17 @@ module.exports = (env, argv) => {
           + 'add "editor" field to your Vue project config.\n',
         )));
       },
+      historyApiFallback: true,
       port: 3000,
       hot: true,
+      overlay: {
+        warnings: true,
+        errors: true,
+      },
+      contentBase: './src',
+      stats: 'minimal',
+      host: '0.0.0.0',
+      disableHostCheck: true,
     },
   };
   return config;

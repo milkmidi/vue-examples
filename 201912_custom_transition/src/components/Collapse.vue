@@ -1,8 +1,9 @@
 <script>
 /* eslint no-return-assign:0, no-param-reassign:0 */
-import Vue from 'vue';
-
 const transitionHook = {
+  beforeEnter(el) {
+    el.style['max-height'] = '0';
+  },
   enter(el) {
     el.style['max-height'] = `${el.scrollHeight}px`;
   },
@@ -10,11 +11,11 @@ const transitionHook = {
     el.style['max-height'] = `${el.scrollHeight}px`;
   },
   leave(el) {
-    Vue.nextTick(() => el.style['max-height'] = 0);
+    setTimeout(() => el.style['max-height'] = '0', 0);
   },
 };
 
-const Collapse = {
+export default {
   name: 'Collapse',
   functional: true,
   render(h, { children }) {
@@ -27,9 +28,9 @@ const Collapse = {
     return h('transition', data, children);
   },
 };
-export default Collapse;
 
 </script>
+
 <style lang="scss" scoped>
 .collapse-enter-active,
 .collapse-leave-active {
