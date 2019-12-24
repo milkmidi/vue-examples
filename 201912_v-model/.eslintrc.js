@@ -16,6 +16,7 @@ module.exports = {
     },
   },
   rules: {
+    'vue/max-attributes-per-line': 0,
     'vue/singleline-html-element-content-newline': 0,
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': 0,

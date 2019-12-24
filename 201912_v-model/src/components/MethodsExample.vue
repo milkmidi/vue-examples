@@ -7,8 +7,9 @@ export default {
     input: '',
   }),
   methods: {
-    click() {
-      this.input = '95827';
+    click(newValue, event) {
+      this.input = newValue;
+      console.log(event);
     },
   },
 };
@@ -17,6 +18,6 @@ export default {
 <template>
   <section>
     <p>{{ input }}</p>
-    <button @click="click('123', $event)">Button</button>
+    <button @click="click('12345', $event)">Button</button>
   </section>
 </template>
