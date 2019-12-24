@@ -1,0 +1,38 @@
+{
+  "name": "milkmidi-webpack",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development",
+    "start:watch": "rimraf ./dist && webpack --mode=development --watch",
+    "build": "webpack --mode=production"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-flow": "^7.7.4",
+    "@babel/runtime": "^7.7.6",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
+    "eslint": "^6.7.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-import-resolver-webpack": "^0.12.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-vue": "^6.0.1",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "rimraf": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "url-loader": "^3.0.0",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.8.3",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  }
+}
