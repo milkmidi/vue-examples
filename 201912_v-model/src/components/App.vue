@@ -7,6 +7,7 @@ const MethodsExample = () => import(/* webpackChunkName: "MethodsExample" */'./M
 const Functional = () => import(/* webpackChunkName: "Functional" */'./Functional.vue');
 const SlotExample = () => import(/* webpackChunkName: "Slot" */'./Slot.vue');
 const MyScopedSlotsExample = () => import(/* webpackChunkName: "MyScopedSlotsExample" */'./MyScopedSlotsExample.vue');
+const FilterExample = () => import(/* webpackChunkName: "FilterExample" */'./FilterExample.vue');
 
 
 export default {
@@ -19,6 +20,7 @@ export default {
     JSX,
     SlotExample,
     MyScopedSlotsExample,
+    FilterExample,
   },
   mounted() {
     // installRenderHelpers
@@ -57,6 +59,7 @@ export default {
         </template>
       </SlotExample>
       <MyScopedSlotsExample />
+      <FilterExample />
     </div>
   </div>
 </template>
