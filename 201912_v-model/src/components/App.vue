@@ -1,9 +1,11 @@
 <script>
 const InputExample = () => import(/* webpackChunkName: "InputExample" */'./InputExample.vue');
 const InputRenderFunctionExample = () => import(/* webpackChunkName: "InputRenderFunctionExample" */'./InputRenderFunctionExample');
+const JSX = () => import(/* webpackChunkName: "JSX" */'./JSX');
 const CheckboxExample = () => import(/* webpackChunkName: "CheckboxExample" */'./CheckboxExample.vue');
 const MethodsExample = () => import(/* webpackChunkName: "MethodsExample" */'./MethodsExample.vue');
 const Functional = () => import(/* webpackChunkName: "Functional" */'./Functional.vue');
+const SlotExample = () => import(/* webpackChunkName: "Slot" */'./Slot.vue');
 
 
 export default {
@@ -13,6 +15,8 @@ export default {
     CheckboxExample,
     MethodsExample,
     Functional,
+    JSX,
+    SlotExample,
   },
   mounted() {
     // installRenderHelpers
@@ -20,7 +24,7 @@ export default {
 
     // looseIndexOf
     // https://github.com/vuejs/vue/blob/dev/src/shared/util.js#L325-L330
-    console.log(this._i);
+    // console.log(this._i);
   },
   methods: {
     functionalClick() {
@@ -41,6 +45,15 @@ export default {
         name="milkmidi"
         @click="functionalClick"
       />
+      <JSX />
+      <SlotExample>
+        <template v-slot="{categories}">
+          <h2>I'm Slot {{ categories }}</h2>
+        </template>
+        <template #footer="{footerData}">
+          <h2>I'm Slot {{ footerData }}</h2>
+        </template>
+      </SlotExample>
     </div>
   </div>
 </template>
@@ -52,5 +65,18 @@ section{
   padding: 1.5rem 1rem 1rem;
   border-radius: 8px;
   position: relative;
+}
+section::before{
+  z-index: 1;
+  content: attr(data-name);
+  pointer-events: none;
+  border-radius: .25rem;
+  padding: 0.1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color:#e74c3c;
+  font-size: 16px;
 }
 </style>

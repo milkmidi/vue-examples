@@ -12,7 +12,7 @@ module.exports = (env, argv) => {
     entry: {
       app: './app.js',
     },
-    devtool: DEV_MODE ? 'source-map' : false,
+    devtool: DEV_MODE ? 'inline-source-map' : false,
     // devtool: DEV_MODE ? 'eval-source-map' : false, // vscode chrome debug
     output: {
       path: path.resolve('dist'),
@@ -44,6 +44,16 @@ module.exports = (env, argv) => {
             { loader: 'vue-loader' },
           ],
           exclude: /node_modules/,
+        },
+        {
+          test: /\.pug$/,
+          oneOf: [
+            {
+              resourceQuery: /^\?vue/,
+              use: ['pug-plain-loader'],
+            },
+          ],
+          include: path.resolve('src'),
         },
         {
           test: /\.css$/,
