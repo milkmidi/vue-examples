@@ -6,6 +6,7 @@ const CheckboxExample = () => import(/* webpackChunkName: "CheckboxExample" */'.
 const MethodsExample = () => import(/* webpackChunkName: "MethodsExample" */'./MethodsExample.vue');
 const Functional = () => import(/* webpackChunkName: "Functional" */'./Functional.vue');
 const SlotExample = () => import(/* webpackChunkName: "Slot" */'./Slot.vue');
+const MyScopedSlotsExample = () => import(/* webpackChunkName: "MyScopedSlotsExample" */'./MyScopedSlotsExample.vue');
 
 
 export default {
@@ -17,6 +18,7 @@ export default {
     Functional,
     JSX,
     SlotExample,
+    MyScopedSlotsExample,
   },
   mounted() {
     // installRenderHelpers
@@ -54,6 +56,7 @@ export default {
           <h2>I'm Slot {{ footerData }}</h2>
         </template>
       </SlotExample>
+      <MyScopedSlotsExample />
     </div>
   </div>
 </template>
