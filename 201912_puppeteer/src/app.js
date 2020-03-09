@@ -2,7 +2,6 @@
 
 import App from './components/App.vue';
 
-Vue.filter('format', (value) => value);
 
 new Vue({
   render: (h) => h(App),

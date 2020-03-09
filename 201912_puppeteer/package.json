@@ -4,9 +4,14 @@
   "scripts": {
     "start": "webpack-dev-server --mode=development",
     "start:watch": "rimraf ./dist && webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "test": "jest"
   },
   "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "puppeteer": "^2.0.0",
+    "vue-jest": "^3.0.5",
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {

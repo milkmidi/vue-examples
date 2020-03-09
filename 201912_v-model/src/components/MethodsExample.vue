@@ -11,13 +11,17 @@ export default {
       this.input = newValue;
       console.log(event);
     },
+    submitHandler() {
+
+    },
   },
 };
 </script>
 
 <template>
-  <section>
+  <section data-name="MethodsExample.vue">
     <p>{{ input }}</p>
-    <button @click="click('12345', $event)">Button</button>
+    <button @click.once="click('12345', $event)">Button</button>
+    <form @submit.prevent="submitHandler" />
   </section>
 </template>

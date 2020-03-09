@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <section>
+  <section data-name="CheckboxExample.vue">
     <p>{{ checkList }}</p>
     <label>
       <input

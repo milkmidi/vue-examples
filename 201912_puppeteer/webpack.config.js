@@ -108,6 +108,23 @@ module.exports = (env, argv) => {
       }),
     ],
     devServer: {
+      before(app) {
+        app.get('/api/data', (req, res) => {
+          res.json({
+            status: 'ok',
+            data: {
+              name: 'milkmidi',
+              email: 'milkmidi@gmail.com',
+              country: '2',
+              gender: '1',
+              skill: ['Vue', 'React'],
+            },
+          });
+        });
+        app.post('/api/data', (req, res) => {
+          res.json({ status: 'ok' });
+        });
+      },
       port: 3000,
       hot: true,
       host: '0.0.0.0',

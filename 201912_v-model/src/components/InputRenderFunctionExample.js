@@ -1,12 +1,18 @@
-const RenderComponent = {
+const InputRenderFunctionExample = {
+  name: 'InputRenderFunctionExample.js',
   data() {
     return {
       input: '',
     };
   },
   render(h) {
+    const data = {
+      attrs: {
+        'data-name': 'InputRenderFunctionExample.js',
+      },
+    };
     return (
-      h('section', null, [
+      h('section', data, [
         h('input', {
           domProps: {
             value: this.input,
@@ -21,4 +27,4 @@ const RenderComponent = {
     );
   },
 };
-export default RenderComponent;
+export default InputRenderFunctionExample;
