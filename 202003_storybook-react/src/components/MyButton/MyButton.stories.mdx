@@ -1,0 +1,31 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import MyButton from './index';
+
+
+<Meta title="MyButton" component={MyButton} />
+
+# MyButton
+就是 MyButton
+
+<Preview>
+  <Story name="basic">
+    <MyButton onClick={action('clicked')}>hi</MyButton>
+  </Story>
+</Preview>
+
+
+# MyButton - rounded
+MyButton - rounded
+
+<Preview>
+  <Story name="rounded">
+    <MyButton rounded onClick={action('clicked')}>
+      <span role="img" aria-label="so cool">😀 😎 👍 💯</span>
+    </MyButton>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={MyButton} />
