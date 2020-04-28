@@ -1,18 +1,20 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
-import Checkbox from './index';
+import Checkbox from './';
 
 
 <Meta title="Checkbox" component={Checkbox} />
 
-# Basic 
+# Basic
+
 <Preview>
   <Story name="basic">
     <Checkbox value="react" text="Hello Checkbox" onChange={action} />
   </Story>
 </Preview>
 
-# multi 
+# Multi
+
 <Preview>
   <Story name="multi">
     <>
@@ -22,7 +24,8 @@ import Checkbox from './index';
   </Story>
 </Preview>
 
-# disabled 
+# disabled
+
 <Preview>
   <Story name="disabled">
     <Checkbox disabled value="react" text="disabled" onChange={action} />
@@ -30,4 +33,5 @@ import Checkbox from './index';
 </Preview>
 
 ## Props
+
 <Props of={Checkbox} />

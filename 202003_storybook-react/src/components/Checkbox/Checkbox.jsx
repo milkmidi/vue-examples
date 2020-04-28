@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled, { css } from 'styled-components';
 
-interface Props {
+export interface Props {
   disabled:boolean;
   value:string;
   onChange: ()=>void;

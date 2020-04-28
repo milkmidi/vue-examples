@@ -6,7 +6,7 @@ interface Props {
   onClick: ()=>void;
 }
 
-export default function MyButton({ onClick, children, rounded }:Props) {
+const MyButton = ({ onClick, children, rounded }:Props) => {
   let cls = 'my-button';
   if (rounded) {
     cls += ' style-rounded';
@@ -20,4 +20,6 @@ export default function MyButton({ onClick, children, rounded }:Props) {
       {children}
     </button>
   );
-}
+};
+
+export default MyButton;
