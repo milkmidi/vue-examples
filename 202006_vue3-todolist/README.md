@@ -1,9 +1,8 @@
-# webpack + vue 
+# Vue 3.0
 
-- `npm i vue vue-loader vue-template-compiler`
-- `npm i -D eslint-plugin-vue`
-- vscode extensions Path Intellisense, 可以方便取讀圖片路徑
-  -  https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense
+- Vue 3.0 Composition API 起手式
+- https://medium.com/@milkmidi/vue-3-0-%E8%B5%B7%E6%89%8B%E5%BC%8F-3aff464fc27a
+
 
 ## install package Command line
 ``` bash
